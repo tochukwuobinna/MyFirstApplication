@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kapt)
-  //  alias(libs.plugins.ksp)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 
 }
@@ -52,7 +52,7 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.lifecycle.runtime.compose.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -61,7 +61,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-
     // Hilt
     implementation(libs.hilt.android.core)
     implementation(libs.androidx.hilt.navigation.compose)
@@ -69,18 +68,30 @@ dependencies {
 
     // Jetpack Compose
     val composeBom = platform(libs.androidx.compose.bom)
-/*
+
+    implementation(libs.accompanist.appcompat.theme)
+    implementation(libs.accompanist.swiperefresh)
+
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.compose.compiler)
-    implementation(composeBom)
-    implementation(libs.androidx.compose.foundation.core)
-    implementation(libs.androidx.compose.foundation.layout)
+
+    implementation("androidx.compose.material:material:1.3.1")
+
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:2.6.1")
+
+    // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
+    // See Add the KSP plugin to your project
+  //  ksp
+   // ksp("androidx.room:room-compiler:2.6.1")
+  /**  implementation(libs.androidx.compose.compiler)
+
+
     implementation(libs.androidx.compose.animation)
     implementation(libs.androidx.compose.material.core)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.lifecycle.viewModelCompose)
-    implementation(libs.accompanist.appcompat.theme)
-    implementation(libs.accompanist.swiperefresh)  **/
+     **/
 }
