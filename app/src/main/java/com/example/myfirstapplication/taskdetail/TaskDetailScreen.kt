@@ -20,11 +20,16 @@ import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.myfirstapplication.R
+import com.example.myfirstapplication.data.Task
+import com.example.myfirstapplication.util.LoadingContent
 import com.example.myfirstapplication.util.TaskDetailTopAppBar
 import com.google.accompanist.appcompattheme.AppCompatTheme
 
