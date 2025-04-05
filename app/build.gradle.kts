@@ -66,6 +66,8 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
 
+   // ksp("androidx.room:room-compiler:2.6.1")
+
     // Jetpack Compose
     val composeBom = platform(libs.androidx.compose.bom)
 
@@ -74,11 +76,16 @@ dependencies {
 
     implementation(libs.androidx.activity.compose)
 
+    implementation("androidx.navigation:navigation-compose:2.8.9")
+
     implementation("androidx.compose.material:material:1.3.1")
 
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:2.6.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
+    kapt("android.arch.persistence.room:compiler:1.1.1")
+    implementation ("androidx.room:room-ktx:2.6.1")
 
     // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
     // See Add the KSP plugin to your project
