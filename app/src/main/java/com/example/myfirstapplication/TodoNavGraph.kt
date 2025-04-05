@@ -19,6 +19,7 @@ import androidx.navigation.navArgument
 import com.example.myfirstapplication.TodoDestinationsArgs.TASK_ID_ARG
 import com.example.myfirstapplication.TodoDestinationsArgs.TITLE_ARG
 import com.example.myfirstapplication.TodoDestinationsArgs.USER_MESSAGE_ARG
+import com.example.myfirstapplication.statistics.StatisticsScreen
 import com.example.myfirstapplication.tasks.TasksScreen
 import com.example.myfirstapplication.util.AppModalDrawer
 import kotlinx.coroutines.CoroutineScope
