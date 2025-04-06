@@ -19,7 +19,9 @@ import androidx.navigation.navArgument
 import com.example.myfirstapplication.TodoDestinationsArgs.TASK_ID_ARG
 import com.example.myfirstapplication.TodoDestinationsArgs.TITLE_ARG
 import com.example.myfirstapplication.TodoDestinationsArgs.USER_MESSAGE_ARG
+import com.example.myfirstapplication.addedittask.AddEditTaskScreen
 import com.example.myfirstapplication.statistics.StatisticsScreen
+import com.example.myfirstapplication.taskdetail.TaskDetailScreen
 import com.example.myfirstapplication.tasks.TasksScreen
 import com.example.myfirstapplication.util.AppModalDrawer
 import kotlinx.coroutines.CoroutineScope
@@ -74,7 +76,7 @@ fun TodoNavGraph(
             )
         ) { entry ->
             val taskId = entry.arguments?.getString(TASK_ID_ARG)
-           /* AddEditTaskScreen(
+            AddEditTaskScreen(
                 topBarTitle = entry.arguments?.getInt(TITLE_ARG)!!,
                 onTaskUpdate = {
                     navActions.navigateToTasks(
@@ -82,16 +84,16 @@ fun TodoNavGraph(
                     )
                 },
                 onBack = { navController.popBackStack() }
-            )  */
+            )
         }
         composable(TodoDestinations.TASK_DETAIL_ROUTE) {
-         /**   TaskDetailScreen(
+            TaskDetailScreen(
                 onEditTask = { taskId ->
                     navActions.navigateToAddEditTask(R.string.edit_task, taskId)
                 },
                 onBack = { navController.popBackStack() },
                 onDeleteTask = { navActions.navigateToTasks(DELETE_RESULT_OK) }
-            ) **/
+            )
         }
     }
 }
